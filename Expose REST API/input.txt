@@ -1,0 +1,10 @@
+POST URL -> http://localhost:8181/
+
+POST Request Body -> {
+"firstname": "Manoj",
+"lastname": "G T"
+}
+
+POST Header -> Content-Type application/json
+
+POST Response Body -> {"firstname":"Manoj","lastname":"G T","fullname":"Manoj G T"}
