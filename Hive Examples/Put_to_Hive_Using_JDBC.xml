@@ -4,129 +4,6 @@
     <groupId>f7dfc56e-0178-1000-6a09-96a1fdaa9b48</groupId>
     <name>Put to Hive Using JDBC</name>
     <snippet>
-        <controllerServices>
-            <id>1f352d9d-44fc-3190-0000-000000000000</id>
-            <parentGroupId>ef364536-bee9-3383-0000-000000000000</parentGroupId>
-            <bundle>
-                <artifact>nifi-hive-nar</artifact>
-                <group>org.apache.nifi</group>
-                <version>1.13.2</version>
-            </bundle>
-            <comments></comments>
-            <descriptors>
-                <entry>
-                    <key>hive-db-connect-url</key>
-                    <value>
-                        <name>hive-db-connect-url</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>hive-config-resources</key>
-                    <value>
-                        <name>hive-config-resources</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>hive-db-user</key>
-                    <value>
-                        <name>hive-db-user</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>hive-db-password</key>
-                    <value>
-                        <name>hive-db-password</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>hive-max-wait-time</key>
-                    <value>
-                        <name>hive-max-wait-time</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>hive-max-total-connections</key>
-                    <value>
-                        <name>hive-max-total-connections</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Validation-query</key>
-                    <value>
-                        <name>Validation-query</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>kerberos-credentials-service</key>
-                    <value>
-                        <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
-                        <name>kerberos-credentials-service</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Kerberos Principal</key>
-                    <value>
-                        <name>Kerberos Principal</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Kerberos Keytab</key>
-                    <value>
-                        <name>Kerberos Keytab</name>
-                    </value>
-                </entry>
-                <entry>
-                    <key>Kerberos Password</key>
-                    <value>
-                        <name>Kerberos Password</name>
-                    </value>
-                </entry>
-            </descriptors>
-            <name>HiveConnectionPool</name>
-            <persistsState>false</persistsState>
-            <properties>
-                <entry>
-                    <key>hive-db-connect-url</key>
-                    <value>jdbc:hive2://localhost:10000</value>
-                </entry>
-                <entry>
-                    <key>hive-config-resources</key>
-                    <value>/home/manojgt/Tools/nifi-1.13.2/ext/hive-site.xml</value>
-                </entry>
-                <entry>
-                    <key>hive-db-user</key>
-                    <value>hive</value>
-                </entry>
-                <entry>
-                    <key>hive-db-password</key>
-                </entry>
-                <entry>
-                    <key>hive-max-wait-time</key>
-                    <value>500 millis</value>
-                </entry>
-                <entry>
-                    <key>hive-max-total-connections</key>
-                    <value>8</value>
-                </entry>
-                <entry>
-                    <key>Validation-query</key>
-                </entry>
-                <entry>
-                    <key>kerberos-credentials-service</key>
-                </entry>
-                <entry>
-                    <key>Kerberos Principal</key>
-                </entry>
-                <entry>
-                    <key>Kerberos Keytab</key>
-                </entry>
-                <entry>
-                    <key>Kerberos Password</key>
-                </entry>
-            </properties>
-            <state>ENABLED</state>
-            <type>org.apache.nifi.dbcp.hive.HiveConnectionPool</type>
-        </controllerServices>
         <processGroups>
             <id>c525615a-6571-35d2-0000-000000000000</id>
             <parentGroupId>ef364536-bee9-3383-0000-000000000000</parentGroupId>
@@ -187,7 +64,7 @@
                     <zIndex>0</zIndex>
                 </connections>
                 <connections>
-                    <id>48da5e40-f3d9-3608-0000-000000000000</id>
+                    <id>4fa7a1e4-5f45-3be3-0000-000000000000</id>
                     <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
                     <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
                     <backPressureObjectThreshold>10000</backPressureObjectThreshold>
@@ -206,7 +83,57 @@
                     <selectedRelationships>success</selectedRelationships>
                     <source>
                         <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>23b0b30a-bf85-30b2-0000-000000000000</id>
+                        <id>51b0b380-518b-371b-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>4fc070d6-a8e6-33ab-0000-000000000000</id>
+                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
+                        <id>bff2e34c-7a91-3cd9-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                    <name></name>
+                    <selectedRelationships>failure</selectedRelationships>
+                    <source>
+                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
+                        <id>51b0b380-518b-371b-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>80a0cf3c-a379-3c32-0000-000000000000</id>
+                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
+                        <id>51b0b380-518b-371b-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+                    <name></name>
+                    <selectedRelationships>sql</selectedRelationships>
+                    <source>
+                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
+                        <id>b32ad1dc-ef39-3e23-0000-000000000000</id>
                         <type>PROCESSOR</type>
                     </source>
                     <zIndex>0</zIndex>
@@ -237,71 +164,21 @@
                     <zIndex>0</zIndex>
                 </connections>
                 <connections>
-                    <id>90dd62e9-dfb2-315d-0000-000000000000</id>
-                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
-                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-                    <destination>
-                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>23b0b30a-bf85-30b2-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </destination>
-                    <flowFileExpiration>0 sec</flowFileExpiration>
-                    <labelIndex>1</labelIndex>
-                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-                    <name></name>
-                    <selectedRelationships>sql</selectedRelationships>
-                    <source>
-                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>b32ad1dc-ef39-3e23-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </source>
-                    <zIndex>0</zIndex>
-                </connections>
-                <connections>
-                    <id>a8efd5cf-17a8-3781-0000-000000000000</id>
-                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
-                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
-                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
-                    <destination>
-                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>bff2e34c-7a91-3cd9-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </destination>
-                    <flowFileExpiration>0 sec</flowFileExpiration>
-                    <labelIndex>1</labelIndex>
-                    <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
-                    <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
-                    <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
-                    <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
-                    <name></name>
-                    <selectedRelationships>failure</selectedRelationships>
-                    <source>
-                        <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>23b0b30a-bf85-30b2-0000-000000000000</id>
-                        <type>PROCESSOR</type>
-                    </source>
-                    <zIndex>0</zIndex>
-                </connections>
-                <connections>
-                    <id>fed5dde2-fd6e-3308-0000-000000000000</id>
+                    <id>ac3b9ce6-d3dd-3cfa-0000-000000000000</id>
                     <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
                     <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
                     <backPressureObjectThreshold>10000</backPressureObjectThreshold>
                     <bends>
-                        <x>1711.5126342773438</x>
-                        <y>252.63106536865234</y>
+                        <x>1706.7662353515625</x>
+                        <y>256.87013244628906</y>
                     </bends>
                     <bends>
-                        <x>1711.5126342773438</x>
-                        <y>302.63106536865234</y>
+                        <x>1706.7662353515625</x>
+                        <y>306.87013244628906</y>
                     </bends>
                     <destination>
                         <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>23b0b30a-bf85-30b2-0000-000000000000</id>
+                        <id>51b0b380-518b-371b-0000-000000000000</id>
                         <type>PROCESSOR</type>
                     </destination>
                     <flowFileExpiration>0 sec</flowFileExpiration>
@@ -314,11 +191,185 @@
                     <selectedRelationships>retry</selectedRelationships>
                     <source>
                         <groupId>c525615a-6571-35d2-0000-000000000000</groupId>
-                        <id>23b0b30a-bf85-30b2-0000-000000000000</id>
+                        <id>51b0b380-518b-371b-0000-000000000000</id>
                         <type>PROCESSOR</type>
                     </source>
                     <zIndex>0</zIndex>
                 </connections>
+                <controllerServices>
+                    <id>7aad9dc2-1f72-3293-0000-000000000000</id>
+                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
+                    <bundle>
+                        <artifact>nifi-hive3-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.11.3</version>
+                    </bundle>
+                    <comments></comments>
+                    <descriptors>
+                        <entry>
+                            <key>hive-db-connect-url</key>
+                            <value>
+<name>hive-db-connect-url</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-config-resources</key>
+                            <value>
+<name>hive-config-resources</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-user</key>
+                            <value>
+<name>hive-db-user</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-password</key>
+                            <value>
+<name>hive-db-password</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-wait-time</key>
+                            <value>
+<name>hive-max-wait-time</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-total-connections</key>
+                            <value>
+<name>hive-max-total-connections</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Validation-query</key>
+                            <value>
+<name>Validation-query</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-min-idle-conns</key>
+                            <value>
+<name>dbcp-min-idle-conns</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-max-idle-conns</key>
+                            <value>
+<name>dbcp-max-idle-conns</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-max-conn-lifetime</key>
+                            <value>
+<name>dbcp-max-conn-lifetime</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-time-between-eviction-runs</key>
+                            <value>
+<name>dbcp-time-between-eviction-runs</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-min-evictable-idle-time</key>
+                            <value>
+<name>dbcp-min-evictable-idle-time</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-soft-min-evictable-idle-time</key>
+                            <value>
+<name>dbcp-soft-min-evictable-idle-time</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>kerberos-credentials-service</key>
+                            <value>
+<identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+<name>kerberos-credentials-service</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Principal</key>
+                            <value>
+<name>Kerberos Principal</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Keytab</key>
+                            <value>
+<name>Kerberos Keytab</name>
+                            </value>
+                        </entry>
+                    </descriptors>
+                    <name>Hive3ConnectionPool</name>
+                    <persistsState>false</persistsState>
+                    <properties>
+                        <entry>
+                            <key>hive-db-connect-url</key>
+                            <value>jdbc:hive2://localhost:10000</value>
+                        </entry>
+                        <entry>
+                            <key>hive-config-resources</key>
+                            <value>/home/manojgt/Tools/nifi-1.13.2/ext/hive-site.xml</value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-user</key>
+                            <value>hive</value>
+                        </entry>
+                        <entry>
+                            <key>hive-db-password</key>
+                        </entry>
+                        <entry>
+                            <key>hive-max-wait-time</key>
+                            <value>500 millis</value>
+                        </entry>
+                        <entry>
+                            <key>hive-max-total-connections</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>Validation-query</key>
+                        </entry>
+                        <entry>
+                            <key>dbcp-min-idle-conns</key>
+                            <value>0</value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-max-idle-conns</key>
+                            <value>8</value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-max-conn-lifetime</key>
+                            <value>-1</value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-time-between-eviction-runs</key>
+                            <value>-1</value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-min-evictable-idle-time</key>
+                            <value>30 mins</value>
+                        </entry>
+                        <entry>
+                            <key>dbcp-soft-min-evictable-idle-time</key>
+                            <value>-1</value>
+                        </entry>
+                        <entry>
+                            <key>kerberos-credentials-service</key>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Principal</key>
+                        </entry>
+                        <entry>
+                            <key>Kerberos Keytab</key>
+                        </entry>
+                    </properties>
+                    <state>ENABLED</state>
+                    <type>org.apache.nifi.dbcp.hive.Hive3ConnectionPool</type>
+                </controllerServices>
                 <labels>
                     <id>32cad4be-a581-3e89-0000-000000000000</id>
                     <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
@@ -453,103 +504,6 @@ expects the substitution attributes to be prefixed with "hiveql".</label>
                     <type>org.apache.nifi.processors.standard.LogAttribute</type>
                 </processors>
                 <processors>
-                    <id>23b0b30a-bf85-30b2-0000-000000000000</id>
-                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
-                    <position>
-                        <x>1240.0</x>
-                        <y>216.0</y>
-                    </position>
-                    <bundle>
-                        <artifact>nifi-hive-nar</artifact>
-                        <group>org.apache.nifi</group>
-                        <version>1.13.2</version>
-                    </bundle>
-                    <config>
-                        <bulletinLevel>WARN</bulletinLevel>
-                        <comments></comments>
-                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
-                        <descriptors>
-                            <entry>
-<key>Hive Database Connection Pooling Service</key>
-<value>
-    <identifiesControllerService>org.apache.nifi.dbcp.hive.HiveDBCPService</identifiesControllerService>
-    <name>Hive Database Connection Pooling Service</name>
-</value>
-                            </entry>
-                            <entry>
-<key>hive-batch-size</key>
-<value>
-    <name>hive-batch-size</name>
-</value>
-                            </entry>
-                            <entry>
-<key>hive-charset</key>
-<value>
-    <name>hive-charset</name>
-</value>
-                            </entry>
-                            <entry>
-<key>statement-delimiter</key>
-<value>
-    <name>statement-delimiter</name>
-</value>
-                            </entry>
-                            <entry>
-<key>rollback-on-failure</key>
-<value>
-    <name>rollback-on-failure</name>
-</value>
-                            </entry>
-                        </descriptors>
-                        <executionNode>ALL</executionNode>
-                        <lossTolerant>false</lossTolerant>
-                        <penaltyDuration>30 sec</penaltyDuration>
-                        <properties>
-                            <entry>
-<key>Hive Database Connection Pooling Service</key>
-<value>1f352d9d-44fc-3190-0000-000000000000</value>
-                            </entry>
-                            <entry>
-<key>hive-batch-size</key>
-<value>100</value>
-                            </entry>
-                            <entry>
-<key>hive-charset</key>
-<value>UTF-8</value>
-                            </entry>
-                            <entry>
-<key>statement-delimiter</key>
-<value>;</value>
-                            </entry>
-                            <entry>
-<key>rollback-on-failure</key>
-<value>false</value>
-                            </entry>
-                        </properties>
-                        <runDurationMillis>0</runDurationMillis>
-                        <schedulingPeriod>0 sec</schedulingPeriod>
-                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
-                        <yieldDuration>1 sec</yieldDuration>
-                    </config>
-                    <executionNodeRestricted>false</executionNodeRestricted>
-                    <name>PutHiveQL</name>
-                    <relationships>
-                        <autoTerminate>false</autoTerminate>
-                        <name>failure</name>
-                    </relationships>
-                    <relationships>
-                        <autoTerminate>false</autoTerminate>
-                        <name>retry</name>
-                    </relationships>
-                    <relationships>
-                        <autoTerminate>false</autoTerminate>
-                        <name>success</name>
-                    </relationships>
-                    <state>STOPPED</state>
-                    <style/>
-                    <type>org.apache.nifi.processors.hive.PutHiveQL</type>
-                </processors>
-                <processors>
                     <id>425c188a-e8b0-30cc-0000-000000000000</id>
                     <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
                     <position>
@@ -660,6 +614,113 @@ expects the substitution attributes to be prefixed with "hiveql".</label>
                     <state>STOPPED</state>
                     <style/>
                     <type>org.apache.nifi.processors.standard.GenerateFlowFile</type>
+                </processors>
+                <processors>
+                    <id>51b0b380-518b-371b-0000-000000000000</id>
+                    <parentGroupId>c525615a-6571-35d2-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1240.0</x>
+                        <y>216.0</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-hive3-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.11.3</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>hive3-dbcp-service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.dbcp.hive.Hive3DBCPService</identifiesControllerService>
+    <name>hive3-dbcp-service</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive-batch-size</key>
+<value>
+    <name>hive-batch-size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-query-timeout</key>
+<value>
+    <name>hive3-query-timeout</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-charset</key>
+<value>
+    <name>hive3-charset</name>
+</value>
+                            </entry>
+                            <entry>
+<key>statement-delimiter</key>
+<value>
+    <name>statement-delimiter</name>
+</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>
+    <name>rollback-on-failure</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>hive3-dbcp-service</key>
+<value>7aad9dc2-1f72-3293-0000-000000000000</value>
+                            </entry>
+                            <entry>
+<key>hive-batch-size</key>
+<value>100</value>
+                            </entry>
+                            <entry>
+<key>hive3-query-timeout</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>hive3-charset</key>
+<value>UTF-8</value>
+                            </entry>
+                            <entry>
+<key>statement-delimiter</key>
+<value>;</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>false</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>PutHive3QL</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>retry</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.hive.PutHive3QL</type>
                 </processors>
                 <processors>
                     <id>6eab4d74-bbba-397d-0000-000000000000</id>
@@ -878,7 +939,7 @@ expects the substitution attributes to be prefixed with "hiveql".</label>
                         <properties>
                             <entry>
 <key>JDBC Connection Pool</key>
-<value>1f352d9d-44fc-3190-0000-000000000000</value>
+<value>7aad9dc2-1f72-3293-0000-000000000000</value>
                             </entry>
                             <entry>
 <key>Statement Type</key>
@@ -886,7 +947,7 @@ expects the substitution attributes to be prefixed with "hiveql".</label>
                             </entry>
                             <entry>
 <key>Table Name</key>
-<value>employee</value>
+<value>employee_txt</value>
                             </entry>
                             <entry>
 <key>Catalog Name</key>
@@ -1185,5 +1246,5 @@ expects the substitution attributes to be prefixed with "hiveql".</label>
             <variables/>
         </processGroups>
     </snippet>
-    <timestamp>04/22/2021 10:27:26 IST</timestamp>
+    <timestamp>04/22/2021 23:54:47 IST</timestamp>
 </template>
